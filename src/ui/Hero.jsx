@@ -147,7 +147,7 @@ export default function Hero(){
                     animate="enter"
                 >
                     <h3 className={styles.greet}>Hello !</h3>
-                    <h1 className={styles.heading}>I'm a Computer Science Student.</h1>
+                    <h1 className={styles.heading}>I am a Computer Science Student.</h1>
                     <p className={styles.para}>I am looking for freelance projects or Internships</p>
                 </m.div>
             </div>

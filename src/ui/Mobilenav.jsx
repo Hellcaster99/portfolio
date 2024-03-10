@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from "react";
+import Link from "next/link";
 import { AnimatePresence, motion as m, useMotionValueEvent, useScroll } from "framer-motion";
 import { menuSlide, slide, scale } from "@/lib/anim";
 import Curve from './Curve';
@@ -72,7 +73,7 @@ export default function Mobilenav(){
                                 {navItems.map((data,index)=>{
                                     return(
                                         <m.div 
-                                        
+                                        key={index}
                                         custom={index}  
                                         variants={slide} 
                                         initial="initial" 
@@ -84,15 +85,15 @@ export default function Mobilenav(){
                                                 animate={isActive ? "open" : "closed"} 
                                                 className={styles.indicator}
                                             />
-                                            <a href={`#${data.href}`} className={styles.link} onClick={()=>setIsActive(false)}>{data.title}</a>
+                                            <Link href={`#${data.href}`} className={styles.link} onClick={()=>setIsActive(false)}>{data.title}</Link>
                                         </m.div>
                                     )
                                 })}
                     
                         </div>
                         <div className={styles.footer}>
-                            <a href='/' className={styles.link}>Instagram</a>
-                            <a href='/' className={styles.link}>LinkedIn</a>
+                            <Link href='/' className={styles.link}>Instagram</Link>
+                            <Link href='/' className={styles.link}>LinkedIn</Link>
                         </div>
                     </div>
                     <Curve/>
