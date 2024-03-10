@@ -1,0 +1,115 @@
+.spacer{
+    height: 150px;
+    width: 100%;
+    background: rgb(23, 23, 24);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .spacertext{
+        color: #fff;
+    }
+}
+
+
+.gallery{
+    height: 175vh;
+    overflow: hidden;
+    background: rgb(23, 23, 23);
+    .galleryWrapper{
+        position: relative;
+        top: -12.5vh;
+        height: 200vh;
+        display: flex;
+        gap: 2vw;
+        padding: 2vw;
+        .column{
+            position: relative;
+            height: 100%;
+            width: 25%;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            gap: 2vw;
+            white-space: nowrap;
+            .imageContainer{
+                position: absolute;
+                height: 33%;
+                width: 100%;
+                position: relative;
+                overflow: hidden;
+                border: solid 1px #fff;
+                background: #fff;
+                padding:4% 3%;
+                .imgBox{
+                    position: relative;
+                    width: 100%;
+                    height: 85%;
+                    .img{
+                        object-fit: cover;
+                    }
+                }
+                .imgDesc{
+                    width: auto;
+                    position: relative;
+                    height: 15%;
+                    display: flex;
+                    align-items: center;
+                    overflow: hidden;
+                    white-space: wrap;
+                }
+            }
+        }
+        .column:nth-of-type(1){
+
+            top: -30%;
+
+        }
+
+        .column:nth-of-type(2){
+
+            top: -70%;
+
+        }
+
+        .column:nth-of-type(3){
+
+            top: -30%;
+
+        }
+
+        .column:nth-of-type(4){
+
+            top: -70%;
+
+        }
+
+
+    }
+}
+
+.spacer2{
+    width: 100%;
+    height: 100vh;
+}
+
+@media only screen and (max-width:900px){
+    .gallery{
+        .galleryWrapper{
+            .column{
+                width: 50%;
+            }
+            .column:nth-of-type(3){
+
+                display: none;
+    
+            }
+    
+            .column:nth-of-type(4){
+    
+                display: none;
+    
+            }
+        }
+    }
+}
