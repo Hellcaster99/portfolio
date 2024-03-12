@@ -124,23 +124,23 @@ export default function Hero(){
                 initial="initial"
                 animate="enter"
             />
-            <m.div
+            {/* <m.div
                 className={styles.cursor}
                 variants={mouseVariants}
                 animate="default"
             >
-            </m.div>
+            </m.div> */}
             <div className={styles.box}>
                 <m.div className={styles.intro}
                     variants={{
                         initial:{
-                            opacity: 0,
+                            scale: 0,
                             y: "10%"
                         },
                         enter:{
-                            opacity:1,
+                            scale:1,
                             y:0,
-                            transition:{duration:1,type:"spring"}
+                            transition:{duration:1,type:"spring",y:0,delay:0.5}
                         }
                     }}
                     initial = "initial"
@@ -153,8 +153,8 @@ export default function Hero(){
             </div>
             {/* <Marquee/> */}
             <div className={styles.parallaxbox}>
-            <ParallaxText baseVelocity={5}>Software Engineer</ParallaxText>
-            <ParallaxText baseVelocity={-5}>Data Scientist</ParallaxText>
+            <ParallaxText baseVelocity={5}>Data Science</ParallaxText>
+            <ParallaxText baseVelocity={-5}>System Design</ParallaxText>
             </div>
         </div>
     )

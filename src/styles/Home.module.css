@@ -4,15 +4,15 @@
   background: #ababab;
   overflow: hidden;
   position: relative;
-  cursor: none;
 
   .me{
     position: absolute;
-    top: -35%;
+    bottom: 0;
     left:15%;
     z-index: 2;
     filter: grayscale(90%);
     transition: filter 0.3s ease-in;
+    height: 80vh;
   }
 
   .meColored{
@@ -127,20 +127,6 @@
   }
 }
 
-@media only screen and (max-width:1100px){
-  .container{
-    .me{
-      left: 5%;
-    }
-
-    .box{
-      .intro{
-        margin-left: 50%;
-      }
-    }
-  }
-}
-
 @media only screen and (max-width:900px){
   .container{
     .me{
@@ -166,6 +152,7 @@
   .container{
     .me{
       left: 5%;
+      height: 60vh;
     }
 
     .box{
@@ -181,12 +168,10 @@
 
 @media only screen and (max-width:768px){
   .container{
-    height: 120vh;
 
     .me{
-      top: 10%;
-      left: 0;
-      width: 400px;
+      width: 300px;
+      left: -10%;
     }
 
     .box{
@@ -195,5 +180,33 @@
         width: 100%;
       }
     }
+  }
+}
+
+@media only screen and (max-width:425px){
+  .container{
+    height: 90vh;
+    .me{
+      left: -18%;
+      width: 250px;
+      height: 50vh;
+    }
+    .box{
+      .intro{
+        .greet{
+          font-size: 20px;
+        }
+        .heading{
+          font-size: 35px;
+        }
+        .para{
+          font-size: 20px;
+        }
+      }
+    }
+    .parallax .scroller{
+      font-size: 75px;
+    }
+    
   }
 }

@@ -12,6 +12,10 @@ const dancing_script = Dancing_Script({subsets:['latin'],weight:['700']})
 
 const links = [
     {
+        title:'About',
+        href:"#about"
+    },
+    {
         title:'Work',
         href:"#work"
     },
@@ -53,7 +57,7 @@ export default function Navbar(){
             animate={hidden ? "hidden":"visible"}
         >
             <div className={styles.navbar}>
-                <div className={`${styles.name} ${dancing_script.className}`}>@Chinmay_Pandya</div>
+                <div className={`${styles.name} ${dancing_script.className}`}>Chinmay Pandya</div>
                 
                     <ul className={styles.links}>
                         {links.map((link,index)=>{
