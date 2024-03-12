@@ -89,6 +89,16 @@ export default function Hero(){
         }
     }
 
+    const trailVariants = {
+      default: i => ({
+        width:1,
+        height:1,
+        x: mousePos.x,
+        y: mousePos.y,
+        transition:{delay: i*0.0001}
+      })
+    }
+
     // const [color,setColor] = useState(false);
     const mouseMove = (e) => {
         setMousPos({
@@ -129,7 +139,21 @@ export default function Hero(){
                 variants={mouseVariants}
                 animate="default"
             >
-            </m.div> */}
+            </m.div>
+            {
+              
+              [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((item,i)=>{
+                return (
+                  <m.div
+                    key={i}
+                    className={styles.cursor}
+                    custom={item}
+                    variants={trailVariants}
+                    animate="default"
+              />
+                )
+              })
+            } */}
             <div className={styles.box}>
                 <m.div className={styles.intro}
                     variants={{

@@ -4,6 +4,7 @@ import { Outfit } from "next/font/google";
 
 import Hero from "@/ui/Hero";
 import About from "@/ui/About";
+import Exp from "@/ui/Exp";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
@@ -19,6 +20,7 @@ export default function Home() {
       <main className={outfit.className}>
         <Hero/>
         <About/>
+        <Exp/>
       </main>
     </>
   );
