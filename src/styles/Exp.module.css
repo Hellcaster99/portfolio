@@ -7,6 +7,13 @@
     /* padding: 5% 0; */
 }
 
+.click{
+    display: none;
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
 .ds, .sd{
     display: flex;
     flex-direction: column;
@@ -18,6 +25,7 @@
 .h1{
     margin: 100px auto;
     font-size: 50px;
+    text-transform: uppercase;
 }
 
 .h2{
@@ -41,6 +49,7 @@
 @media only screen and (max-width:600px){
     .h1{
         font-size: 40px;
+        margin: 50px 0;
     }
     .row{
         width: 500px;
@@ -48,6 +57,9 @@
 }
 
 @media only screen and (max-width:500px){
+    .click{
+        display: block;
+    }
     .h1{
         font-size: 25px;
     }
