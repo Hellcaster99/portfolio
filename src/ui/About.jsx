@@ -12,7 +12,7 @@ export default function About(){
                 <AnimatePresence mode='wait'>
                 <m.h1 className={styles.heading} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>About me</m.h1>
                 </AnimatePresence>
-                <Paragraph>I am 20 and I currently stay in Gandhinagar. Proficient in Python, Java, and C++. I participated in various hackathons like SSIP, Dotslash and SIH.</Paragraph>
+                <Paragraph>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
             </div>
         </div>
     )
