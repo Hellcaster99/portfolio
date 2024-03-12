@@ -134,11 +134,11 @@ export default function Hero(){
                 <m.div className={styles.intro}
                     variants={{
                         initial:{
-                            scale: 0,
+                            opacity: 0,
                             y: "10%"
                         },
                         enter:{
-                            scale:1,
+                            opacity:1,
                             y:0,
                             transition:{duration:1,type:"spring",y:0,delay:0.5}
                         }

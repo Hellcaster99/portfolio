@@ -1,5 +1,5 @@
 import { useRef } from 'react';
-import {motion as m, useScroll, useTransform} from 'framer-motion';
+import {motion as m, useScroll, useTransform,AnimatePresence} from 'framer-motion';
 import styles from '@/styles/About.module.css';
 import { DM_Serif_Display, Marcellus } from 'next/font/google';
 
@@ -9,7 +9,9 @@ export default function About(){
     return(
         <div className={styles.aboutContainer} id="about">
             <div className={styles.box}>
-                <h1 className={styles.heading}>About me</h1>
+                <AnimatePresence mode='wait'>
+                <m.h1 className={styles.heading} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring"}}}>About me</m.h1>
+                </AnimatePresence>
                 <Paragraph>I am 20 and I currently stay in Gandhinagar. Proficient in Python, Java, and C++. I participated in various hackathons like SSIP, Dotslash and SIH.</Paragraph>
             </div>
         </div>
@@ -25,16 +27,17 @@ function Paragraph({children}){
     })
     const words = children.split(" ");
     return(
-        <p
+        <m.p
             className={`${styles.para} ${font.className}`}
             ref={element}
+            initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring"}}}
         >
             {words.map((word,i)=>{
                 const start = i/words.length;
                 const end = start + (1/words.length);
                 return <Word key={i} range={[start,end]} progress={scrollYProgress}>{word}</Word>
             })}
-        </p>
+        </m.p>
     )
 }
 
@@ -64,6 +67,7 @@ function Character({children,range,progress}){
             <m.span
             className={styles.character}
             style={{opacity}}
+            
             >
                 {children}
             </m.span>
