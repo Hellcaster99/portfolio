@@ -10,7 +10,7 @@ export default function About(){
         <div className={styles.aboutContainer} id="about">
             <div className={styles.box}>
                 <AnimatePresence mode='wait'>
-                <m.h1 className={styles.heading} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:2}}}>About me</m.h1>
+                <m.h1 className={styles.heading} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>About me</m.h1>
                 </AnimatePresence>
                 <Paragraph>I am 20 and I currently stay in Gandhinagar. Proficient in Python, Java, and C++. I participated in various hackathons like SSIP, Dotslash and SIH.</Paragraph>
             </div>
@@ -30,7 +30,7 @@ function Paragraph({children}){
         <m.p
             className={`${styles.para} ${font.className}`}
             ref={element}
-            initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:2}}}
+            initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}
         >
             {words.map((word,i)=>{
                 const start = i/words.length;
