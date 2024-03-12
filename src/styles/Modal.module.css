@@ -1,6 +1,6 @@
 .modalContainer{
-    height: 350px;
-    width: 400px;
+    height: 300px;
+    width: 350px;
     position: absolute;
     background-color: white;
     overflow: hidden;
@@ -26,7 +26,8 @@
 }
 
 .modal img{
-    height: auto;
+    width: 250px;
+    height: auto
 }
 
 .cursor, .cursorLabel{
@@ -47,4 +48,15 @@
 
 .cursorLabel{
     background-color: transparent;
+}
+
+@media only screen and (max-width:500px){
+    .modalContainer{
+        height: 250px;
+        width: 250px;
+    }
+
+    .modal img{
+        width: 200px;
+    }
 }
