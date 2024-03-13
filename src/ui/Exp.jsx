@@ -10,25 +10,25 @@ const projects = [
   {
     title: "SSIP Hackathon",
     src: "plant.jpg",
-    color: "#000000",
+    color: "#1E1C1C",
     category: "Predictive Analysis"
   },
   {
     title: "Step In global",
     src: "client.jpg",
-    color: "#8C8C8C",
+    color: "#ababab",
     category: "Software & Back-end"
   },
   {
     title: "Next.js",
     src: "dashboard.jpg",
-    color: "#EFE8D3",
+    color: "#1E1C1C",
     category: "Admin Dashboard"
   },
   {
     title: "Hi-Power",
     src: "hipower.jpg",
-    color: "#706D63",
+    color: "#ababab",
     category: "E-commerce website"
   }
 ]
