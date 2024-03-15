@@ -95,7 +95,7 @@
     
                 .shadow{
                     position: absolute;
-                    opacity:0.4;
+                    opacity:0.2;
                 }
             }
         }
@@ -120,7 +120,7 @@
             .heading{
                 width: 100%;
                 
-                margin-bottom: 230px;
+                margin-bottom: 150px;
 
                 .aboutme{
                     width: 110px;

@@ -42,15 +42,15 @@ export default function Mobilenav(){
         const mouseMove = (e) => {
             const {clientX, clientY} = e;
             const {width,height,left,top} = aboutRef.current.getBoundingClientRect();
-            const x = clientX - (left + width / 2);
-            const y = clientY - (top + height / 2);
-            gsap.to(aboutRef.current,{x:x});
-            gsap.to(aboutRef.current,{y:y});
+            const x = clientX - (left + width/2);
+            const y = clientY - (top + height/2);
+            gsap.to(aboutRef.current,{x:x,duration:0.3,ease:"power3"});
+            gsap.to(aboutRef.current,{y:y,duration:0.3,ease:"power3"});
         }
 
         const mouseLeave = (e) => {
-            gsap.to(aboutRef.current, {x:0});
-            gsap.to(aboutRef.current, {y:0});
+            gsap.to(aboutRef.current, {x:0,duration:0.3,ease:"power3"});
+            gsap.to(aboutRef.current, {y:0,duration:0.3,ease:"power3"});
         }
 
 

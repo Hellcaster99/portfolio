@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import {motion as m, useScroll, useTransform} from 'framer-motion';
+import {motion as m, useScroll, useSpring, useTransform} from 'framer-motion';
 import styles from '@/styles/About.module.css';
 import { Outfit } from 'next/font/google';
 
@@ -14,7 +14,13 @@ const cursorVariants = {
 
 export default function About(){
     const {scrollY}  = useScroll();
-    const y = useTransform(scrollY, [0,1000], ["180%","0%"]);
+    const Y = useSpring(scrollY,{
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    })
+    const y = useTransform(Y, [0,1000], ["100%","-20%"]);
+    
 
     const [IsHovered, setIsHovered] = useState(false)
 
@@ -60,6 +66,12 @@ function Paragraph({children,element,setIsHovered,index}){
         target: element,
         offset: ['start 0.9','start 0.25']
     })
+    const Y = useSpring(scrollYProgress,{
+        stiffness: 100,
+        damping: 30,
+        restDelta: 0.001
+    })
+    
     const words = children.split(" ");
     return(
         <m.p
@@ -72,7 +84,7 @@ function Paragraph({children,element,setIsHovered,index}){
             {words.map((word,i)=>{
                 const start = i/words.length;
                 const end = start + (1/words.length);
-                return <Word key={i} range={[start,end]} progress={scrollYProgress}>{word}</Word>
+                return <Word key={i} range={[start,end]} progress={Y}>{word}</Word>
             })}
         </m.p>
     )

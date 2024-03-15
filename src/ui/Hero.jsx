@@ -72,7 +72,12 @@ import styles from "@/styles/Home.module.css";
 
 export default function Hero(){
     const {scrollY} = useScroll()
-    const y = useTransform(scrollY, [0,1000],["0%","20%"]);
+    const Y = useSpring(scrollY,{
+      stiffness: 100,
+      damping: 30,
+      restDelta: 0.001
+  })
+    const y = useTransform(Y, [0,1000],["0%","20%"]);
     const sc = useTransform(scrollY, [0,1000],[1,1.1]);
 
     const [mousePos,setMousPos] = useState({
