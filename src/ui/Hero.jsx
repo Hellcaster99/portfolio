@@ -77,7 +77,7 @@ export default function Hero(){
       damping: 30,
       restDelta: 0.001
   })
-    const y = useTransform(Y, [0,1000],["0%","20%"]);
+    const y = useTransform(Y, [0,1000],["0%","40%"]);
     const sc = useTransform(scrollY, [0,1000],[1,1.1]);
 
     const [mousePos,setMousPos] = useState({
