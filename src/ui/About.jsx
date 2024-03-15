@@ -1,6 +1,6 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import {motion as m, useScroll, useTransform,AnimatePresence} from 'framer-motion';
+import {motion as m, useScroll, useTransform} from 'framer-motion';
 import styles from '@/styles/About.module.css';
 import { Outfit } from 'next/font/google';
 
@@ -9,37 +9,40 @@ const font = Outfit({subsets:['latin'],weight:['400']});
 export default function About(){
     const {scrollY}  = useScroll();
     const y = useTransform(scrollY, [0,1000], ["180%","0%"]);
-    // const aboutRef = useRef(null);
 
-    // useEffect(()=>{
-    //     const mouseMove = (e) => {
-    //         const {clientX, clientY} = e;
-    //         const {width,height,left,top} = aboutRef.current.getBoundingClientRect();
-    //         const x = clientX - (left + width / 2);
-    //         const y = clientY - (top + height / 2);
-    //         gsap.to(aboutRef.current,{x:x});
-    //         gsap.to(aboutRef.current,{y:y});
-    //     }
+    // const [scale,setScale] = useState(1);
 
-    //     const mouseLeave = (e) => {
-    //         gsap.to(aboutRef.current, {x:0});
-    //         gsap.to(aboutRef.current, {y:"40%"});
-    //     }
+    const ref = useRef(null);
+    const para = useRef(null);
 
+    useEffect(()=>{
+        const mouseMove = (e) => {
+            const {clientX,clientY} = e;
+            gsap.to(ref.current,{x:clientX})
+            gsap.to(ref.current,{y:clientY})
+            // gsap.to(ref.current,{scale:2})
+        }
+        const mouseEnter = ()=>{
+            alert("a");
+        }
 
-    //     aboutRef.current.addEventListener("mousemove",mouseMove);
-    //     aboutRef.current.addEventListener("mouseleave",mouseLeave);
+        // para.current.addEventListener("onmouseenter",mouseEnter)
+        window.addEventListener("mousemove",mouseMove)
 
-    //     return () => {
-    //         aboutRef.current.removeEventListener("mousemove",mouseMove);
-    //         aboutRef.current.removeEventListener("mouseleave",mouseLeave);
-    //     }
-    // },[])
+        return ()=>{
+            window.removeEventListener("mousemove",mouseMove)
+            // para.current.removeEventListener("onmouseenter",mouseEnter)
+        }
+    },[])
+    
 
     return(
         <div className={styles.aboutContainer} id="about">
+            <m.div ref={ref} className={styles.cursor}>
+            
+            </m.div>
             <div className={styles.box}>
-                <Paragraph>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
+                <Paragraph element={para}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
                 <div className={styles.heading}>
                     <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>The combination of my logic, critical thinking & creativity positions me in a unique place in the computer science world.</m.p>
                     <div className={styles.abouth}>
@@ -57,8 +60,7 @@ export default function About(){
 
 }
 
-function Paragraph({children}){
-    const element = useRef(null);
+function Paragraph({children,element}){
     const {scrollYProgress} = useScroll({
         target: element,
         offset: ['start 0.9','start 0.25']

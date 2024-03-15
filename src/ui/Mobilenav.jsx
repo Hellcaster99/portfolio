@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from "react";
+import { useState,useEffect,useRef } from "react";
+import gsap from "gsap";
 import Link from "next/link";
 import { AnimatePresence, motion as m, useMotionValueEvent, useScroll } from "framer-motion";
 import { menuSlide, slide, scale } from "@/lib/anim";
@@ -35,6 +36,33 @@ export default function Mobilenav(){
     const [isActive,setIsActive] = useState(false);
     const [mobile,setMobile] = useState(false);
 
+    const aboutRef = useRef(null);
+
+    useEffect(()=>{
+        const mouseMove = (e) => {
+            const {clientX, clientY} = e;
+            const {width,height,left,top} = aboutRef.current.getBoundingClientRect();
+            const x = clientX - (left + width / 2);
+            const y = clientY - (top + height / 2);
+            gsap.to(aboutRef.current,{x:x});
+            gsap.to(aboutRef.current,{y:y});
+        }
+
+        const mouseLeave = (e) => {
+            gsap.to(aboutRef.current, {x:0});
+            gsap.to(aboutRef.current, {y:0});
+        }
+
+
+        aboutRef.current.addEventListener("mousemove",mouseMove);
+        aboutRef.current.addEventListener("mouseleave",mouseLeave);
+
+        return () => {
+            aboutRef.current.removeEventListener("mousemove",mouseMove);
+            aboutRef.current.removeEventListener("mouseleave",mouseLeave);
+        }
+    },[])
+
     useMotionValueEvent(scrollY, "change", (latest)=>{
         if(latest > 150){
             setMobile(true);
@@ -48,6 +76,7 @@ export default function Mobilenav(){
         <>
             <AnimatePresence mode="wait">
             <m.div
+                ref={aboutRef}
                 onClick={() => {setIsActive(!isActive)}} className={styles.button}
                 variants={{
                     hidden:{scale:0},

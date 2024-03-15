@@ -34,6 +34,7 @@ export default function Navbar(){
     const {scrollY} = useScroll()
     const [hidden,setHidden] = useState(false);
     
+    
     useMotionValueEvent(scrollY, "change", (latest)=>{
         const previous  = scrollY.getPrevious();
         if(latest > 150){

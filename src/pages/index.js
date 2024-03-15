@@ -1,7 +1,6 @@
+
 import Head from "next/head";
-import Image from "next/image";
 import { Outfit } from "next/font/google";
-import { useEffect } from "react";
 import Hero from "@/ui/Hero";
 import About from "@/ui/About";
 import Exp from "@/ui/Exp";
@@ -10,22 +9,6 @@ import Exp from "@/ui/Exp";
 const outfit = Outfit({ subsets: ["latin"] });
 
 export default function Home() {
-
-  // useEffect( () => {
-
-  //   (
-
-  //     async () => {
-
-  //         const LocomotiveScroll = (await import('locomotive-scroll')).default
-
-  //         const locomotiveScroll = new LocomotiveScroll();
-
-  //     }
-
-  //   )()
-
-  // }, [])
 
   return (
     <>
