@@ -12,36 +12,37 @@ export default function About(){
 
     // const [scale,setScale] = useState(1);
 
-    const ref = useRef(null);
+    // const ref = useRef(null);
     const para = useRef(null);
 
-    useEffect(()=>{
-        const mouseMove = (e) => {
-            const {clientX,clientY} = e;
-            gsap.to(ref.current,{x:clientX})
-            gsap.to(ref.current,{y:clientY})
-            // gsap.to(ref.current,{scale:2})
-        }
-        const mouseEnter = ()=>{
-            alert("a");
-        }
+    // useEffect(()=>{
+    //     const mouseMove = (e) => {
+    //         const {clientX,clientY} = e;
+    //         gsap.to(ref.current,{x:clientX})
+    //         gsap.to(ref.current,{y:clientY})
+    //         // gsap.to(ref.current,{scale:2})
+    //     }
+    //     const mouseEnter = ()=>{
+    //         alert("a");
+    //     }
 
-        // para.current.addEventListener("onmouseenter",mouseEnter)
-        window.addEventListener("mousemove",mouseMove)
+    //     // para.current.addEventListener("onmouseenter",mouseEnter)
+    //     window.addEventListener("mousemove",mouseMove)
 
-        return ()=>{
-            window.removeEventListener("mousemove",mouseMove)
-            // para.current.removeEventListener("onmouseenter",mouseEnter)
-        }
-    },[])
+    //     return ()=>{
+    //         window.removeEventListener("mousemove",mouseMove)
+    //         // para.current.removeEventListener("onmouseenter",mouseEnter)
+    //     }
+    // },[])
     
 
     return(
         <div className={styles.aboutContainer} id="about">
-            <m.div ref={ref} className={styles.cursor}>
             
-            </m.div>
             <div className={styles.box}>
+            {/* <m.div ref={ref} className={styles.cursor}>
+            
+            </m.div> */}
                 <Paragraph element={para}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
                 <div className={styles.heading}>
                     <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>The combination of my logic, critical thinking & creativity positions me in a unique place in the computer science world.</m.p>
