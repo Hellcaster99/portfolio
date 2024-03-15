@@ -9,32 +9,32 @@ const font = Outfit({subsets:['latin'],weight:['400']});
 export default function About(){
     const {scrollY}  = useScroll();
     const y = useTransform(scrollY, [0,1000], ["180%","0%"]);
-    const aboutRef = useRef(null);
+    // const aboutRef = useRef(null);
 
-    useEffect(()=>{
-        const mouseMove = (e) => {
-            const {clientX, clientY} = e;
-            const {width,height,left,top} = aboutRef.current.getBoundingClientRect();
-            const x = clientX - (left + width / 2);
-            const y = clientY - (top + height / 2);
-            gsap.to(aboutRef.current,{x:x});
-            gsap.to(aboutRef.current,{y:y});
-        }
+    // useEffect(()=>{
+    //     const mouseMove = (e) => {
+    //         const {clientX, clientY} = e;
+    //         const {width,height,left,top} = aboutRef.current.getBoundingClientRect();
+    //         const x = clientX - (left + width / 2);
+    //         const y = clientY - (top + height / 2);
+    //         gsap.to(aboutRef.current,{x:x});
+    //         gsap.to(aboutRef.current,{y:y});
+    //     }
 
-        const mouseLeave = (e) => {
-            gsap.to(aboutRef.current, {x:0});
-            gsap.to(aboutRef.current, {y:"40%"});
-        }
+    //     const mouseLeave = (e) => {
+    //         gsap.to(aboutRef.current, {x:0});
+    //         gsap.to(aboutRef.current, {y:"40%"});
+    //     }
 
 
-        aboutRef.current.addEventListener("mousemove",mouseMove);
-        aboutRef.current.addEventListener("mouseleave",mouseLeave);
+    //     aboutRef.current.addEventListener("mousemove",mouseMove);
+    //     aboutRef.current.addEventListener("mouseleave",mouseLeave);
 
-        return () => {
-            aboutRef.current.removeEventListener("mousemove",mouseMove);
-            aboutRef.current.removeEventListener("mouseleave",mouseLeave);
-        }
-    },[])
+    //     return () => {
+    //         aboutRef.current.removeEventListener("mousemove",mouseMove);
+    //         aboutRef.current.removeEventListener("mouseleave",mouseLeave);
+    //     }
+    // },[])
 
     return(
         <div className={styles.aboutContainer} id="about">
@@ -44,9 +44,9 @@ export default function About(){
                     <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>The combination of my logic, critical thinking & creativity positions me in a unique place in the computer science world.</m.p>
                     <div className={styles.abouth}>
                     <m.div className={`${styles.aboutme} ${font.className}`}
-                    ref={aboutRef}
+                    
                     style={{y}}
-                    ><p>Drag Me</p>
+                    ><p>About Me</p>
                     </m.div>
                     </div>
                     
