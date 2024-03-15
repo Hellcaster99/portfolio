@@ -8,29 +8,30 @@ import Modal from './Modal';
 
 const projects = [
   {
-    title: "SSIP Hackathon",
-    src: "plant.jpg",
-    color: "#1E1C1C",
-    category: "Predictive Analysis"
+    title: "Hi-Power",
+    src: "hipower.jpg",
+    color: "#cdcdcd",
+    category: "E-commerce website"
   },
   {
-    title: "Step In global",
+    title: "Step-In global",
     src: "client.jpg",
-    color: "#ababab",
+    color: "#cdcdcd",
     category: "Software & Back-end"
+  },
+  {
+    title: "SSIP",
+    src: "plant.jpg",
+    color: "#111",
+    category: "Predictive Analysis"
   },
   {
     title: "Next.js",
     src: "dashboard.jpg",
-    color: "#1E1C1C",
+    color: "#111",
     category: "Admin Dashboard"
   },
-  {
-    title: "Hi-Power",
-    src: "hipower.jpg",
-    color: "#ababab",
-    category: "E-commerce website"
-  }
+  
 ]
 
 export default function Exp() {
@@ -40,7 +41,9 @@ export default function Exp() {
   return (
     <>
     <div id="exp" className={styles.container}>
-        <m.p className={styles.h1} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>Recent Work and Projects</m.p>
+        <div className={styles.h1box} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>
+        <m.p className={styles.h1} >Recent Work and Projects</m.p>
+        </div>
         <h2 className={styles.click}>Click on each for effect</h2>
         <div className={styles.ds}>
             <div className={styles.row}>

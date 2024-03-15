@@ -18,21 +18,25 @@
 
 .project:hover h2{
     transform: translateX(-10px);
+    opacity: 0.3;
 }
 
 .project:hover p{
     transform: translateX(10px);
+    opacity: 0.3;
 }
 
 .project h2{
-    font-size: 50px;
+    font-size: 70px;
     margin: 0px;
+    text-transform: uppercase;
     font-weight: 400;
     transition: all 0.4s;
 }
 
 .project p{
     transition: all 0.4s;
+    font-size: 20px;
     font-weight: 300;
 }
 
@@ -43,6 +47,10 @@
 
     .project h2{
         font-size: 40px;
+    }
+
+    .project p{
+        font-size: 12px;
     }
 }
 
@@ -57,5 +65,9 @@
 
     .project h2{
         font-size: 20px;
+    }
+
+    .project p{
+        font-size: 10px;
     }
 }

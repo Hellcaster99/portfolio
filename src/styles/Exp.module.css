@@ -22,9 +22,14 @@
     height: 70vh;
 }
 
+.h1box{
+    width: 1200px;
+    position: relative;
+    padding: 50px 100px;
+}
+
 .h1{
-    margin: 100px auto 0 auto;
-    font-size: 20px;
+    font-size: 15px;
     font-weight: 200;
     text-transform: uppercase;
     color: #635f5f;
@@ -51,31 +56,37 @@
 }
 
 @media only screen and (max-width:750px){
-    .row{
+    .row,.h1box{
         width: 600px;
     }
 }
 
 @media only screen and (max-width:600px){
-    .row{
+    .row,.h1box{
         width: 500px;
     }
+    
 }
 
 @media only screen and (max-width:500px){
-    .h1{
-        margin-bottom: 50px;
-    }
+    
     .click{
         display: block;
     }
-    .row{
+    .row,.h1box{
         width: 350px;
     }
+    .h1box{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0 0 50px 0;
+    }
+    
 }
 
 @media only screen and (max-width:350px){
-    .row{
+    .row,.h1box{
         width: 300px;
     }
 }
