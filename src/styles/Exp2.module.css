@@ -1,0 +1,19 @@
+.container{
+    background: #000;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 8% 10%;
+}
+
+.projectBox{
+    width: 100%;
+    height: 100vh;
+    color: #fff;
+    font-size: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -40,7 +40,7 @@ export default function Exp() {
   return (
     <>
     <div id="exp" className={styles.container}>
-        <m.h1 className={styles.h1} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>Recent Work and Projects</m.h1>
+        <m.p className={styles.h1} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>Recent Work and Projects</m.p>
         <h2 className={styles.click}>Click on each for effect</h2>
         <div className={styles.ds}>
             <div className={styles.row}>
