@@ -6,44 +6,38 @@ import { Outfit } from 'next/font/google';
 
 const font = Outfit({subsets:['latin'],weight:['400']});
 
+const cursorVariants = {
+    initial: {scale: 0, x:"-50%", y:"-830%"},
+    enter: {scale: 1, x:"-50%", y:"-830%", transition: {duration: 0.4, ease: [0.76, 0, 0.24, 1]}},
+    closed: {scale: 0, x:"-50%", y:"-830%", transition: {duration: 0.4, ease: [0.32, 0, 0.67, 0]}}
+}
+
 export default function About(){
     const {scrollY}  = useScroll();
     const y = useTransform(scrollY, [0,1000], ["180%","0%"]);
 
-    // const [scale,setScale] = useState(1);
+    const [IsHovered, setIsHovered] = useState(false)
 
-    // const ref = useRef(null);
+    const ref = useRef(null);
     const para = useRef(null);
 
-    // useEffect(()=>{
-    //     const mouseMove = (e) => {
-    //         const {clientX,clientY} = e;
-    //         gsap.to(ref.current,{x:clientX})
-    //         gsap.to(ref.current,{y:clientY})
-    //         // gsap.to(ref.current,{scale:2})
-    //     }
-    //     const mouseEnter = ()=>{
-    //         alert("a");
-    //     }
+    useEffect(()=>{
+        let xMoveMask = gsap.quickTo(ref.current, "left", {duration: 0.8, ease: "power3"})
+        let yMoveMask = gsap.quickTo(ref.current, "top", {duration: 0.8, ease: "power3"})
 
-    //     // para.current.addEventListener("onmouseenter",mouseEnter)
-    //     window.addEventListener("mousemove",mouseMove)
-
-    //     return ()=>{
-    //         window.removeEventListener("mousemove",mouseMove)
-    //         // para.current.removeEventListener("onmouseenter",mouseEnter)
-    //     }
-    // },[])
+        window.addEventListener('mousemove',(e)=>{
+            const {pageX, pageY} = e;
+            xMoveMask(pageX);
+            yMoveMask(pageY);
+        })
+    })
     
 
     return(
         <div className={styles.aboutContainer} id="about">
-            
+            <m.div ref={ref} className={styles.mask} variants={cursorVariants} initial="initial" animate={IsHovered ? "enter":"closed"}></m.div>
             <div className={styles.box}>
-            {/* <m.div ref={ref} className={styles.cursor}>
-            
-            </m.div> */}
-                <Paragraph element={para}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
+                <Paragraph index={1} element={para} setIsHovered={setIsHovered}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
                 <div className={styles.heading}>
                     <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>The combination of my logic, critical thinking & creativity positions me in a unique place in the computer science world.</m.p>
                     <div className={styles.abouth}>
@@ -61,7 +55,7 @@ export default function About(){
 
 }
 
-function Paragraph({children,element}){
+function Paragraph({children,element,setIsHovered,index}){
     const {scrollYProgress} = useScroll({
         target: element,
         offset: ['start 0.9','start 0.25']
@@ -69,6 +63,8 @@ function Paragraph({children,element}){
     const words = children.split(" ");
     return(
         <m.p
+            onMouseEnter={()=>{setIsHovered(true)}}
+            onMouseLeave={()=>{setIsHovered(false)}}
             className={`${styles.para} ${font.className}`}
             ref={element}
             initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}
