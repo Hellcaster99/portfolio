@@ -17,7 +17,7 @@ const links = [
     },
     {
         title:'Work',
-        href:"#work"
+        href:"#exp"
     },
     {
         title:"Skills",

@@ -19,7 +19,7 @@ export default function About(){
         damping: 30,
         restDelta: 0.001
     })
-    const y = useTransform(Y, [0,1000], ["100%","-20%"]);
+    const y = useTransform(Y, [0,1000], ["50%","-10%"]);
     
 
     const [IsHovered, setIsHovered] = useState(false)
@@ -43,9 +43,9 @@ export default function About(){
         <div className={styles.aboutContainer} id="about">
             <m.div ref={ref} className={styles.mask} variants={cursorVariants} initial="initial" animate={IsHovered ? "enter":"closed"}></m.div>
             <div className={styles.box}>
-                <Paragraph index={1} element={para} setIsHovered={setIsHovered}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. Love to take up challenges and solve problems. I am also studying Business Intelligence from IIT Madras and am interested in data mining and business solutions. Well experienced in creating responsive and interactive web designs and applications.</Paragraph>
+                <Paragraph index={1} element={para} setIsHovered={setIsHovered}>I am 20 and I currently stay in Gandhinagar. Passionate and organised student currently in the pre-final year. I am also studying Business Intelligence from IIT Madras and am interested in data science and business solutions.</Paragraph>
                 <div className={styles.heading}>
-                    <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>The combination of my logic, critical thinking & creativity positions me in a unique place in the computer science world.</m.p>
+                    <m.p className={styles.aboutp} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.1}}}>Love to take up challenges and solve problems. Well experienced in creating responsive and interactive web designs and applications.</m.p>
                     <div className={styles.abouth}>
                     <m.div className={`${styles.aboutme} ${font.className}`}
                     

@@ -1,7 +1,7 @@
 'use client';
 import styles from '@/styles/Exp.module.css'
-import {motion as m} from 'framer-motion'
-import { useState } from 'react';
+import {motion as m, useScroll, useTransform, useSpring} from 'framer-motion'
+import { useRef, useState } from 'react';
 import Project from './Project';
 import Modal from './Modal';
 
@@ -37,6 +37,17 @@ const projects = [
 export default function Exp() {
 
   const [modal, setModal] = useState({active: false, index: 0})
+  const container = useRef(null)
+  const {scrollYProgress} = useScroll({
+    target: container,
+    offset:['start end','end start']
+  })
+  const Y = useSpring(scrollYProgress,{
+    stiffness: 700,
+    damping: 70,
+    restDelta: 0.001
+  })
+  const height = useTransform(Y, [0,0.9],["65vh","0vh"])
 
   return (
     <>
@@ -55,6 +66,7 @@ export default function Exp() {
             </div>
             <Modal modal={modal} projects={projects}/>
         </div>
+        
     </div>
     </>
   )

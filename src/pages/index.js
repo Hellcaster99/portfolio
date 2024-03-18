@@ -4,11 +4,36 @@ import { Outfit } from "next/font/google";
 import Hero from "@/ui/Hero";
 import About from "@/ui/About";
 import Exp from "@/ui/Exp";
+import Skills from "@/ui/Skills";
+import { useEffect } from "react";
+import Lenis from "@studio-freight/lenis";
+import Contact from "@/ui/Contact";
 // import Exp2 from "@/ui/Exp2";
 
 const outfit = Outfit({ subsets: ["latin"] });
 
 export default function Home() {
+
+  useEffect(()=>{
+    const lenis = new Lenis({
+      // easing: (x) => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2
+      // easing: (x) => -(Math.cos(Math.PI * x) - 1) / 2
+      easing: (x) => Math.sin((x * Math.PI) / 2),
+      duration: 0.7
+      // easing: (x) => 1 - Math.cos((x * Math.PI) / 2)
+    })
+
+    // lenis.on('scroll', (e) => {
+    // console.log(e)
+    // })
+
+    function raf(time) {
+      lenis.raf(time)
+      requestAnimationFrame(raf)
+    }
+
+    requestAnimationFrame(raf)
+  })
 
   return (
     <>
@@ -22,6 +47,8 @@ export default function Home() {
         <Hero/>
         <About/>
         <Exp/>
+        <Skills/>
+        <Contact/>
       </main>
     </>
   );

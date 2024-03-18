@@ -2,7 +2,7 @@
     width: 100%;
     min-height: 50vh;
     background: #fff;
-    padding: 8% 18%;
+    padding: 8% 15%;
     position: relative;
     overflow: hidden;
 
@@ -55,9 +55,10 @@
             
 
             .aboutp{
-                font-size: 18px;
-                font-weight: 200;
+                font-size: 16px;
+                font-weight: 300;
                 height: 30%;
+                color: rgb(40, 40, 40)
             }
 
             .abouth{
@@ -82,7 +83,7 @@
         }
 
         .para{
-            width: 70%;
+            width: 60%;
             white-space: wrap;
             position: relative;
             display: flex;
@@ -91,7 +92,7 @@
 
             .word{
                 position: relative;
-                margin-right: 10px;
+                margin-right: 6px;
                 margin-top: 8px;
                 color: #000;
                 display: flex;
@@ -110,7 +111,7 @@
 @media only screen and (max-width:450px){
 
    .aboutContainer{
-        padding: 15% 10%;
+        padding: 15% 4%;
 
         .mask{
             display: none;
@@ -124,6 +125,10 @@
                 width: 100%;
                 
                 margin-bottom: 150px;
+
+                .aboutp{
+                    font-size: 15px;
+                }
 
                 .aboutme{
                     width: 110px;

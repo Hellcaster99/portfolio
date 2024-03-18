@@ -112,14 +112,6 @@ export default function Hero(){
         })
     }
     useEffect(()=>{
-        
-        // if(mousePos.x >= 180 && mousePos.x <= 550 && mousePos.y >= 180 && mousePos.y <= 900){
-        //     // setColor(true);
-        //     // setCustomVariant("image")
-        // }else{
-        //     // setCustomVariant("default")
-        //     // setColor(false);
-        // }
         window.addEventListener("mousemove",mouseMove)
         return () => {
             window.removeEventListener("mousemove",mouseMove)
@@ -139,26 +131,6 @@ export default function Hero(){
                 initial="initial"
                 animate="enter"
             />
-            {/* <m.div
-                className={styles.cursor}
-                variants={mouseVariants}
-                animate="default"
-            >
-            </m.div>
-            {
-              
-              [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20].map((item,i)=>{
-                return (
-                  <m.div
-                    key={i}
-                    className={styles.cursor}
-                    custom={item}
-                    variants={trailVariants}
-                    animate="default"
-              />
-                )
-              })
-            } */}
             <div className={styles.box}>
                 <m.div className={styles.intro}
                     variants={{
@@ -180,7 +152,6 @@ export default function Hero(){
                     <p className={styles.para}>I am looking for freelance projects or Internships</p>
                 </m.div>
             </div>
-            {/* <Marquee/> */}
             <div className={styles.parallaxbox}>
             <ParallaxText baseVelocity={5}>Data Science</ParallaxText>
             <ParallaxText baseVelocity={-5}>System Design</ParallaxText>

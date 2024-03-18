@@ -4,6 +4,7 @@
     height: 100vh;
     align-items: center;
     justify-content: center;
+    background: #fff;
     /* padding: 5% 0; */
 }
 
@@ -19,13 +20,13 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
 }
 
 .h1box{
-    width: 1200px;
+    width: 1050px;
     position: relative;
-    padding: 50px 100px;
+    padding: 0 0 10px 0;
 }
 
 .h1{
@@ -40,7 +41,7 @@
 }
 
 .row{
-    width: 1200px;
+    width: 1050px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,6 +55,33 @@
     justify-content: center;
     align-items: center;
 }
+
+/* .circleContainer{
+
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+
+    .circle{
+        height: 200%;
+        width: 120%;
+
+        left: -10%;
+        border: 1px;
+        border-radius: 0 0 50% 50%;
+
+        background-color: white;
+
+        z-index: 1;
+
+        position: absolute;
+
+        box-shadow: 0px 90px 10px ;
+
+    }
+
+} */
 
 @media only screen and (max-width:750px){
     .row,.h1box{
@@ -81,6 +109,7 @@
         justify-content: center;
         align-items: center;
         padding: 0 0 50px 0;
+        margin: 50px 0;
     }
     
 }

@@ -6,4 +6,5 @@
     height: 100%;
     fill: rgb(41, 41, 41);
     stroke: none;
+    z-index: 4;
 }
