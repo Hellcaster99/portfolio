@@ -46,9 +46,9 @@
     background-color: #fff;
     z-index: 2;
     width: 100vw;
-    height: 90vh;
+    height: 80vh;
     margin-top: 100px;
-    overflow-x: hidden;
+    /* overflow-x: hidden; */
     /* overflow-y: visible; */
     .header{
         display: flex;
@@ -61,11 +61,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 150px;
+            width: 200px;
             border-top: 1px solid #797979;
             border-bottom: 1px solid #797979;
             height: 55px;
             border-radius: 2.125em;
+            font-size: 25px;
+            box-shadow: 0 15px 15px lightgrey;
+            text-transform: capitalize;
         }
     }
 
@@ -104,7 +107,7 @@
         /* overflow-x: hidden; */
         
         .circle{
-            height: 1000%;
+            height: 1200%;
             width: 120%;
             left: -10%;
             /* top: -1550%; */
@@ -117,15 +120,11 @@
     }
 }
 
-.skills{
-    overflow-y: visible;
-}
-
 @media only screen and (max-width:500px){
     .slidingImages{
         margin: 50px 0;
         height: 80vh;
-
+        overflow-x: hidden;
         .header{
             margin-top: 50px;
             height: 100px;
@@ -148,10 +147,17 @@
             left: -65vw;
         }
 
-        .circleContainer{
-            .circle{
-                height: 1200%;
+        .header{
+            .span{
+                width: 150px;
+                font-size: 18px;
+                box-shadow: 0 5px 15px lightgrey;
             }
+        }
+
+        .circleContainer{
+            display: none;
+            visibility: hidden;
         }
     }
 }

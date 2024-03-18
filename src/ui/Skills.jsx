@@ -135,11 +135,11 @@ export default function Skills() {
 
                 </motion.div>
 
-                {/* <motion.div style={{height}} className={styles.circleContainer}>
+                <motion.div style={{height}} className={styles.circleContainer}>
 
                     <div className={styles.circle}></div>
 
-                </motion.div> */}
+                </motion.div>
 
         </div>
 
