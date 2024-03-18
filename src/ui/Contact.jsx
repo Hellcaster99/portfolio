@@ -14,7 +14,7 @@ export default function Contact() {
     const y = useTransform(scrollYProgress, [0, 1], [-500, 0])
     const rotate = useTransform(scrollYProgress, [0, 1], [120, 90])
     return (
-        <motion.div style={{y}} ref={container} className={styles.contact}>
+        <motion.div style={{y}} id='contact' ref={container} className={styles.contact}>
             <div className={styles.body}>
                 <div className={styles.title}>
                     <span className={styles.span}>
@@ -25,7 +25,7 @@ export default function Contact() {
                             src={`/images/pic.jpg`}
                             />
                         </div>
-                        <h2 className={styles.h2}>Let's work</h2>
+                        <h2 className={styles.h2}>Let&apos;s work</h2>
                     </span>
                     <h2 className={styles.h2}>together</h2>
                     <motion.div style={{x}} className={styles.buttonContainer}>
