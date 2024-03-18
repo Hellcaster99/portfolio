@@ -67,11 +67,11 @@ export default function Skills() {
 
     return (
 
-        <div id='skills' ref={container} className={styles.slidingImages}>
+        <div id='skills' ref={container} className={`${styles.slidingImages} ${styles.skills}`}>
             <div className={styles.header}>
-                <span className={styles.span}>
+                <motion.span className={styles.span} initial={{opacity:0,y:"40%"}} whileInView={{opacity:1,y:0,transition:{duration:1.5,type:"spring",delay:0.3}}}>
                     skills
-                </span>
+                </motion.span>
             </div>
 
             <motion.div style={{x: x1}} className={styles.slider}>
@@ -135,11 +135,11 @@ export default function Skills() {
 
                 </motion.div>
 
-                <motion.div style={{height}} className={styles.circleContainer}>
+                {/* <motion.div style={{height}} className={styles.circleContainer}>
 
                     <div className={styles.circle}></div>
 
-                </motion.div>
+                </motion.div> */}
 
         </div>
 

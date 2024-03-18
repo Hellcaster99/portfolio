@@ -7,6 +7,7 @@ import { AnimatePresence, motion as m, useMotionValueEvent, useScroll } from "fr
 import { menuSlide, slide, scale } from "@/lib/anim";
 import Curve from './Curve';
 import styles from '@/styles/Mobile.module.css';
+import { hero } from "@/lib/links";
 
 const navItems = [
     {
@@ -118,7 +119,7 @@ export default function Mobilenav(){
                                                 animate={isActive ? "open" : "closed"} 
                                                 className={styles.indicator}
                                             />
-                                            <Link href={`#${data.href}`} className={styles.link} onClick={()=>setIsActive(false)}>{data.title}</Link>
+                                            <Link href={`#${data.href}`} className={styles.link} onClick={()=>{setIsActive(false) }}>{data.title}</Link>
                                         </m.div>
                                     )
                                 })}

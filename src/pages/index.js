@@ -19,7 +19,7 @@ export default function Home() {
       // easing: (x) => x < 0.5 ? 2 * x * x : 1 - Math.pow(-2 * x + 2, 2) / 2
       // easing: (x) => -(Math.cos(Math.PI * x) - 1) / 2
       easing: (x) => Math.sin((x * Math.PI) / 2),
-      duration: 0.7
+      duration: 0.7,
       // easing: (x) => 1 - Math.cos((x * Math.PI) / 2)
     })
 
