@@ -13,7 +13,7 @@ import {
 import { wrap } from 'framer-motion';
 import styles from "@/styles/Home.module.css";
 
-  function ParallaxText({ children, baseVelocity = 100 }) {
+  function ParallaxText({ children, baseVelocity = 50 }) {
     const baseX = useMotionValue(0);
     const { scrollY } = useScroll();
     const scrollVelocity = useVelocity(scrollY);
@@ -21,7 +21,7 @@ import styles from "@/styles/Home.module.css";
       damping: 100,
       stiffness: 700
     });
-    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 5], {
+    const velocityFactor = useTransform(smoothVelocity, [0, 1000], [0, 1], {
       clamp: false
     });
   
@@ -84,27 +84,6 @@ export default function Hero(){
         x:0,
         y:0
     })
-
-    // const [customVariant,setCustomVariant] = useState("default");
-
-    const mouseVariants = {
-        default:{
-            x: mousePos.x,
-            y: mousePos.y,
-        }
-    }
-
-    const trailVariants = {
-      default: i => ({
-        width:1,
-        height:1,
-        x: mousePos.x,
-        y: mousePos.y,
-        transition:{delay: i*0.0001}
-      })
-    }
-
-    // const [color,setColor] = useState(false);
     const mouseMove = (e) => {
         setMousPos({
             x: e.clientX,
