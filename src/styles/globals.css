@@ -12,9 +12,13 @@ html{
   /* scroll-behavior: auto; */
 }
 
+body{
+  overflow-x: hidden;
+}
+
 main{
   width: 100vw;
   height: auto;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
