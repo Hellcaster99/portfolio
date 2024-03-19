@@ -83,6 +83,18 @@
 
 } */
 
+@media screen and (max-height:660px){
+    .container{
+        height: 110vh;
+    }
+}
+
+@media only screen and (max-width:1300px){
+    .row,.h1box{
+        width: 950px;
+    }
+}
+
 @media only screen and (max-width:750px){
     .row,.h1box{
         width: 600px;

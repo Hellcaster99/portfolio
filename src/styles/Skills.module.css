@@ -120,6 +120,23 @@
     }
 }
 
+@media screen and (max-height:660px){
+    .slidingImages{
+        margin-top: 0;
+        height: 90vh;
+
+        .header{
+            align-items: center;
+        }
+
+        .circleContainer{
+            .circle{
+                height: 1000%;
+            }
+        }
+    }
+}
+
 @media only screen and (max-width:500px){
     .slidingImages{
         margin: 50px 0;

@@ -27,11 +27,11 @@
     
     }
     .body{
-        padding-top: 200px;
         width: 100%;
+        height: 100%;
         max-width: 1800px;
         background-color: #141516;
-        padding: 12%;
+        padding: 4% 12%;
 
         .title{
             border-bottom: 1px solid rgb(134, 134, 134);
@@ -143,6 +143,23 @@
             
         }
     }   
+}
+
+@media screen and (max-height:660px){
+    .contact{
+        .body{
+            padding: 6% 12%;
+            .title{
+                height: 40%;
+                .span{
+                    .imageContainer{
+                        width: 100px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width:500px){
