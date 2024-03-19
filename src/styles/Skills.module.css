@@ -157,11 +157,11 @@
             }
         }
         .slider:nth-of-type(3){
-            left: 45vw;
+            left: 42vw;
         }
 
         .slider:nth-of-type(2){
-            left: -65vw;
+            left: -55vw;
         }
 
         .header{

@@ -14,11 +14,28 @@ html{
 
 body{
   overflow-x: hidden;
+  height: auto;
 }
 
 main{
   width: 100vw;
-  height: auto;
+  
   overflow-x: hidden;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
 }
 

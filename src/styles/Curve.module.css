@@ -8,3 +8,9 @@
     stroke: none;
     z-index: 4;
 }
+
+@media screen and (max-width:500px){
+    .svgCurve{
+        display: none;
+    }
+}
