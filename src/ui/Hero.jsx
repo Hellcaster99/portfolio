@@ -126,14 +126,14 @@ export default function Hero(){
                     initial = "initial"
                     animate="enter"
                 >
-                    <h3 className={styles.greet}>Hello !</h3>
-                    <h1 className={styles.heading}>I am a Computer Science Student.</h1>
-                    <p className={styles.para}>I am looking for freelance projects or Internships</p>
+                    {/* <h3 className={styles.greet}>Hello !</h3> */}
+                    <p className={styles.heading}>Computer Science Student</p>
+                    <p className={styles.para}>Looking for freelance projects or Internships</p>
                 </m.div>
             </div>
             <div className={styles.parallaxbox}>
             <ParallaxText baseVelocity={5}>Data Science</ParallaxText>
-            <ParallaxText baseVelocity={-5}>System Design</ParallaxText>
+            {/* <ParallaxText baseVelocity={-5}>System Design</ParallaxText> */}
             </div>
         </div>
     )

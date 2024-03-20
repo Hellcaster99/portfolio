@@ -58,7 +58,7 @@ export default function Navbar(){
             animate={hidden ? "hidden":"visible"}
         >
             <div className={styles.navbar}>
-                <div className={`${styles.name} ${dancing_script.className}`}>Chinmay Pandya</div>
+                <div className={`${styles.name}`}> @ Chinmay Pandya</div>
                 
                     <ul className={styles.links}>
                         {links.map((link,index)=>{
